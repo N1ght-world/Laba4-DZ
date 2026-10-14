@@ -3,38 +3,45 @@
 #include <locale.h>
 
 
-func1_DZ();
 ZD_1();
 ZD_1_A();
 ZD_1_B();
 ZD_1_V();
 ZD_2();
 ZD_3();
+int filos(int R_A, int R_B, int R_C);
 
 int main()
 {
 	setlocale(LC_ALL, "ru_RU.UTF-8");
-	func1_DZ();
 	ZD_1();
 	ZD_1_A();
 	ZD_1_B();
 	ZD_1_V();
 	ZD_2();
 	ZD_3();
+
+	printf("Введите три числа:\n");
+	int A, B, C;
+	int res;
+	scanf("%d %d %d", &A, &B, &C);
+	res = filos(A, B, C);
+	printf("fil = %d\n", res);
 	return 0;
 }
 
-int func1_DZ()
+int filos(int R_A, int R_B, int R_C)
 {
-	int A, B, C;
-	scanf("%d %d %d", &A, &B, &C);
-	if (A % 3 == 0 && B % 3 == 0 && C % 3 == 0){
+	int square = 0;
+	if (R_A % 3 == 0 && R_B % 3 == 0 && R_C % 3 == 0) {
 		printf("Реакция запустится\n");
+		square = 1;
 	}
 	else {
 		printf("Реакция не запустится\n");
+		square = 0;
 	}
-	return 0;
+	return square;
 }
 
 int ZD_1()
@@ -132,4 +139,3 @@ int ZD_3()
 
 	return 0;
 }
-
