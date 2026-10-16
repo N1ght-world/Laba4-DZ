@@ -26,6 +26,12 @@ int main()
 	int res;
 	scanf("%d %d %d", &A, &B, &C);
 	res = filos(A, B, C);
+	if (res == 1) { 
+		printf("Реакция запустится\n"); 
+	}
+	else { 
+		printf("Реакция не запустится\n"); 
+	}
 	printf("fil = %d\n", res);
 	return 0;
 }
@@ -34,12 +40,10 @@ int filos(int R_A, int R_B, int R_C)
 {
 	int square = 0;
 	if (R_A % 3 == 0 && R_B % 3 == 0 && R_C % 3 == 0) {
-		printf("Реакция запустится\n");
-		square = 1;
+		return 1;
 	}
 	else {
-		printf("Реакция не запустится\n");
-		square = 0;
+		return 0;
 	}
 	return square;
 }
